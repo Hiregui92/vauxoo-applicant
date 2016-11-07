@@ -64,3 +64,16 @@ INSERT INTO employee_hobbies (employee_id,employee_hobby_id)
 	(4, 2),
 	(4, 3);
 --END SQL2--
+
+--SQL3--
+
+ALTER TABLE employee ADD COLUMN id_boss integer;
+ALTER TABLE employee ADD CONSTRAINT id_boss_employee FOREIGN KEY (id_boss) REFERENCES employee (id);
+
+
+UPDATE employee SET id_boss = 3 WHERE id = 1;
+UPDATE employee SET id_boss = 4 WHERE id = 2;
+UPDATE employee SET id_boss = 1 WHERE id = 3;
+UPDATE employee SET id_boss = 3 WHERE id = 4;
+
+--END SQL3--
