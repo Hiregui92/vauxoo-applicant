@@ -5,12 +5,16 @@ Your module documentation here
 
 class CalculatorClass(object):
     """
-    Your class documentation here
+    Class to calculate the sum of a list
     """
 
     def sum(self, num_list):
         """
-        Your method documentation here
+        Calculates the sum of a list of integers
         """
         # your sum code here
-        return "not implement yet"  # Remove this dummy line
+        result = 0
+        for iterator in range(0, len(num_list)):
+            result += num_list[iterator]
+
+        return result
