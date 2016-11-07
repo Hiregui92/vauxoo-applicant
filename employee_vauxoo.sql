@@ -32,3 +32,35 @@ INSERT INTO employee(id, first_name, last_name, id_departament)
     (4, 'Pablo', 'Pacheco', 3);
 
 --END SQL1--
+
+--SQL2--
+
+CREATE TABLE employee_hobby (
+    id INTEGER PRIMARY KEY NOT NULL,
+    name VARCHAR(50),
+    description TEXT
+);
+
+CREATE TABLE employee_hobbies (
+   employee_id INTEGER NOT NULL REFERENCES employee(id),
+   employee_hobby_id INTEGER NOT NULL REFERENCES employee_hobby(id)
+ );
+
+INSERT INTO employee_hobby (id, name, description)
+    VALUES
+    (1, 'Futbol', 'Cup Vauxoo'),
+    (2, 'Domino', 'World Domino Tournament Vauxoo'),
+    (3, 'Maraton Programacion', 'Challenge Vauxoo');
+
+INSERT INTO employee_hobbies (employee_id,employee_hobby_id)
+	VALUES
+	(1,1),
+	(1, 2),
+	(1, 3),
+	(2, 1),
+	(2, 2),
+	(3, 1),
+	(3, 2),
+	(4, 2),
+	(4, 3);
+--END SQL2--
